@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Angular7DemoServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -24,7 +26,10 @@ namespace Angular6DemoServices
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
+            services.AddCors();
+            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(@"Data Source=MANGESH\SQL2016;Initial Catalog=Angular7Demo;User ID=sa;Password=sa"));
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +39,9 @@ namespace Angular6DemoServices
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseMiddleware();
+            app.UseCors();
+           
             app.UseMvc();
         }
     }

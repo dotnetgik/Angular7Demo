@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular6DemoServices", "Angular6DemoServices\Angular6DemoServices.csproj", "{24B2A7F6-5ABD-4A65-A774-526DE94A6046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular7DemoServices", "Angular6DemoServices\Angular7DemoServices.csproj", "{24B2A7F6-5ABD-4A65-A774-526DE94A6046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
